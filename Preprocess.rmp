@@ -12,9 +12,6 @@
     <parameter key="process_duration_for_mail" value="30"/>
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
-      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve train-final" width="90" x="179" y="34">
-        <parameter key="repository_entry" value="//Local Repository/Tasks/train-final"/>
-      </operator>
       <operator activated="true" class="blending:rename" compatibility="10.1.002" expanded="true" height="82" name="Rename" width="90" x="313" y="34">
         <list key="rename attributes">
           <parameter key="5" value="Gesture ID"/>
@@ -26,6 +23,7 @@
       <operator activated="true" class="blending:set_role" compatibility="10.1.002" expanded="true" height="82" name="Set Role" width="90" x="447" y="34">
         <list key="set_roles">
           <parameter key="Gesture ID" value="label"/>
+          <parameter key="Gesture name" value="metadata"/>
         </list>
       </operator>
       <operator activated="true" class="replace_missing_values" compatibility="10.1.002" expanded="true" height="103" name="Replace Missing Values" width="90" x="581" y="34">
@@ -57,13 +55,14 @@
         <parameter key="expression" value="remove.*"/>
         <parameter key="also_apply_to_special_attributes_(id,_label..)" value="false"/>
       </operator>
-      <connect from_op="Retrieve train-final" from_port="output" to_op="Rename" to_port="example set input"/>
+      <connect from_port="input 1" to_op="Rename" to_port="example set input"/>
       <connect from_op="Rename" from_port="example set output" to_op="Set Role" to_port="example set input"/>
       <connect from_op="Set Role" from_port="example set output" to_op="Replace Missing Values" to_port="example set input"/>
       <connect from_op="Replace Missing Values" from_port="example set output" to_op="Execute Script" to_port="input 1"/>
       <connect from_op="Execute Script" from_port="output 1" to_op="Select Attributes" to_port="example set input"/>
       <connect from_op="Select Attributes" from_port="example set output" to_port="result 1"/>
       <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="source_input 2" spacing="0"/>
       <portSpacing port="sink_result 1" spacing="0"/>
       <portSpacing port="sink_result 2" spacing="0"/>
     </process>
