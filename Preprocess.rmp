@@ -12,7 +12,7 @@
     <parameter key="process_duration_for_mail" value="30"/>
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
-      <operator activated="true" class="blending:rename" compatibility="10.1.002" expanded="true" height="82" name="Rename" width="90" x="313" y="34">
+      <operator activated="true" class="blending:rename" compatibility="10.1.002" expanded="true" height="82" name="Rename" width="90" x="179" y="34">
         <list key="rename attributes">
           <parameter key="5" value="Gesture ID"/>
           <parameter key="bye" value="Gesture name"/>
@@ -20,13 +20,13 @@
         <parameter key="from_attribute" value=""/>
         <parameter key="to_attribute" value=""/>
       </operator>
-      <operator activated="true" class="blending:set_role" compatibility="10.1.002" expanded="true" height="82" name="Set Role" width="90" x="447" y="34">
+      <operator activated="true" class="blending:set_role" compatibility="10.1.002" expanded="true" height="82" name="Set Role" width="90" x="313" y="34">
         <list key="set_roles">
           <parameter key="Gesture ID" value="label"/>
           <parameter key="Gesture name" value="metadata"/>
         </list>
       </operator>
-      <operator activated="true" class="replace_missing_values" compatibility="10.1.002" expanded="true" height="103" name="Replace Missing Values" width="90" x="581" y="34">
+      <operator activated="true" class="replace_missing_values" compatibility="10.1.002" expanded="true" height="103" name="Replace Missing Values" width="90" x="447" y="34">
         <parameter key="return_preprocessing_model" value="false"/>
         <parameter key="attribute_filter_type" value="all"/>
         <parameter key="attribute" value=""/>
@@ -43,11 +43,11 @@
         <parameter key="default" value="average"/>
         <list key="columns"/>
       </operator>
-      <operator activated="true" class="execute_script" compatibility="10.1.002" expanded="true" height="82" name="Execute Script" width="90" x="715" y="34">
+      <operator activated="true" class="execute_script" compatibility="10.1.002" expanded="true" height="82" name="Execute Script" width="90" x="581" y="34">
         <parameter key="script" value="&#10;IOObject inputData = input[0];&#10;&#10;i = 0;&#10;&#10;String[] dim = new String[] { 'x', 'y', 'z' };&#10;String[] prefix = new String[] { &quot;mp&quot;, &quot;sp&quot;, &quot;ma&quot;, &quot;sa&quot; };&#10;String[] joints = new String[] {&#10;    &quot;Head&quot;, // 0&#10;    &quot;Shoulder_Center&quot;, // 1&#10;    &quot;Shoulder_Left&quot;, // 2&#10;    &quot;Shoulder_Right&quot;, // 3&#10;    &quot;Elbow_Left&quot;, // 4&#10;    &quot;Elbow_Right&quot;, // 5&#10;    &quot;Wrist_Left&quot;, // 6&#10;    &quot;Wrist_Right&quot;, // 7&#10;    &quot;Hand_Left&quot;, // 8&#10;    &quot;Hand_Right&quot;, // 9&#10;    &quot;Spine&quot;, // 10&#10;    &quot;Hip_Center&quot;, // 11&#10;    &quot;Hip_Left&quot;, // 12&#10;    &quot;Hip_Right&quot;, // 13&#10;    &quot;Knee_Left&quot;, // 14&#10;    &quot;Knee_Right&quot;, // 15&#10;    &quot;Ankle_Left&quot;, // 16&#10;    &quot;Ankle_Right&quot;, // 17&#10;    &quot;Foot_Left&quot;, // 18&#10;    &quot;Foot_Right&quot; // 19&#10;};&#10;&#10;// int[] thr = int[] { 0, 11, 12, 13, 14, 15, 16, 17, 18, 19 };&#10;&#10;for (Attribute attr : inputData.getAttributes()) {&#10;&#9;String name = attr.getName();&#10;&#9;try {&#10;&#9;&#9;float n = Float.parseFloat(name);&#10;&#9;&#9;int d = i % 3;&#10;&#9;&#9;int k = Math.floor(i / 3);&#10;&#9;&#9;int p = k % 20;&#10;&#9;&#9;int t = Math.floor(k / 20);&#10;&#9;&#9;i++;&#10;&#9;&#9;if (p == 0 || p &gt; 10) {&#10;&#9;&#9;&#9;attr.setName(&quot;remove&quot; + i);&#10;&#9;&#9;&#9;continue;&#10;&#9;&#9;}&#10;&#9;&#9;attr.setName(prefix[t] + ' ' + joints[p] + ' ' + dim[d]);&#10;&#9;} catch(Exception e) { /* */ }&#10;}&#10;&#10;&#10;return inputData;"/>
         <parameter key="standard_imports" value="true"/>
       </operator>
-      <operator activated="true" class="blending:select_attributes" compatibility="10.1.002" expanded="true" height="82" name="Select Attributes" width="90" x="849" y="34">
+      <operator activated="true" class="blending:select_attributes" compatibility="10.1.002" expanded="true" height="82" name="Select Attributes" width="90" x="715" y="34">
         <parameter key="type" value="exclude attributes"/>
         <parameter key="attribute_filter_type" value="regular expression"/>
         <parameter key="select_attribute" value=""/>
