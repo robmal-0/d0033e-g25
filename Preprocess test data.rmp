@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="10.1.002">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="10.1.002" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve test-final" width="90" x="313" y="34">
+        <parameter key="repository_entry" value="test-final"/>
+      </operator>
+      <operator activated="true" class="productivity:execute_process" compatibility="10.1.002" expanded="true" height="68" name="Execute Preprocess" width="90" x="581" y="34">
+        <parameter key="process_location" value="//Local Repository/Tasks/Preprocess"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="10.1.002" expanded="true" height="68" name="Store" width="90" x="849" y="34">
+        <parameter key="repository_entry" value="preprocessed-test-final"/>
+      </operator>
+      <connect from_op="Retrieve test-final" from_port="output" to_op="Execute Preprocess" to_port="input 1"/>
+      <connect from_op="Execute Preprocess" from_port="result 1" to_op="Store" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+    </process>
+  </operator>
+</process>
