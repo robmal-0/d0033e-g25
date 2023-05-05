@@ -12,19 +12,19 @@
     <parameter key="process_duration_for_mail" value="30"/>
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final (2)" width="90" x="112" y="34">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final (2)" width="90" x="112" y="34">
         <parameter key="repository_entry" value="//Local Repository/Tasks/preprocessed-train-final"/>
       </operator>
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final (3)" width="90" x="112" y="85">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final (3)" width="90" x="112" y="85">
         <parameter key="repository_entry" value="preprocessed-test-final"/>
       </operator>
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final (5)" width="90" x="112" y="646">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final (5)" width="90" x="112" y="646">
         <parameter key="repository_entry" value="preprocessed-train-final"/>
       </operator>
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final (2)" width="90" x="112" y="697">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final (2)" width="90" x="112" y="697">
         <parameter key="repository_entry" value="preprocessed-test-final"/>
       </operator>
-      <operator activated="false" class="concurrency:loop_parameters" compatibility="10.1.002" expanded="true" height="103" name="Loop Parameters" width="90" x="380" y="34">
+      <operator activated="true" class="concurrency:loop_parameters" compatibility="10.1.002" expanded="true" height="103" name="Loop Parameters" width="90" x="380" y="34">
         <list key="parameters">
           <parameter key="k-NN.k" value="[5.0;50.0;45;linear]"/>
           <parameter key="k-NN.weighted_vote" value="true,false"/>
@@ -96,6 +96,7 @@
           <portSpacing port="source_input 3" spacing="0"/>
           <portSpacing port="sink_performance" spacing="0"/>
           <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
         </process>
       </operator>
       <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final (6)" width="90" x="112" y="187">
@@ -232,7 +233,7 @@
           <portSpacing port="sink_output 1" spacing="0"/>
         </process>
       </operator>
-      <operator activated="false" class="concurrency:optimize_parameters_grid" compatibility="10.1.002" expanded="true" height="124" name="Optimize MLP (2)" width="90" x="380" y="646">
+      <operator activated="true" class="concurrency:optimize_parameters_grid" compatibility="10.1.002" expanded="true" height="124" name="Optimize MLP" width="90" x="380" y="646">
         <list key="parameters">
           <parameter key="Neural Net (2).training_cycles" value="[50;400;10;logarithmic]"/>
           <parameter key="Neural Net (2).learning_rate" value="[0.01;0.2;4;linear]"/>
@@ -357,13 +358,13 @@
           <portSpacing port="sink_output 1" spacing="0"/>
         </process>
       </operator>
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final" width="90" x="112" y="340">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final" width="90" x="112" y="340">
         <parameter key="repository_entry" value="//Local Repository/Tasks/preprocessed-train-final"/>
       </operator>
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final" width="90" x="112" y="391">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final" width="90" x="112" y="391">
         <parameter key="repository_entry" value="preprocessed-test-final"/>
       </operator>
-      <operator activated="false" class="concurrency:optimize_parameters_grid" compatibility="10.1.002" expanded="true" height="124" name="Optimize decision tree (2)" width="90" x="380" y="340">
+      <operator activated="true" class="concurrency:optimize_parameters_grid" compatibility="10.1.002" expanded="true" height="124" name="Optimize decision tree" width="90" x="380" y="340">
         <list key="parameters">
           <parameter key="Decision Tree (2).criterion" value="gain_ratio,information_gain,gini_index,accuracy"/>
           <parameter key="Decision Tree (2).confidence" value="[0.1;0.5;1;linear]"/>
@@ -491,13 +492,13 @@
           <portSpacing port="sink_output 1" spacing="0"/>
         </process>
       </operator>
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final (7)" width="90" x="112" y="493">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-train-final (7)" width="90" x="112" y="493">
         <parameter key="repository_entry" value="//Local Repository/Tasks/preprocessed-train-final"/>
       </operator>
-      <operator activated="false" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final (7)" width="90" x="112" y="544">
+      <operator activated="true" class="retrieve" compatibility="10.1.002" expanded="true" height="68" name="Retrieve preprocessed-test-final (7)" width="90" x="112" y="544">
         <parameter key="repository_entry" value="preprocessed-test-final"/>
       </operator>
-      <operator activated="false" class="concurrency:optimize_parameters_grid" compatibility="10.1.002" expanded="true" height="124" name="Optimize random forest (2)" width="90" x="380" y="493">
+      <operator activated="true" class="concurrency:optimize_parameters_grid" compatibility="10.1.002" expanded="true" height="124" name="Optimize random forest" width="90" x="380" y="493">
         <list key="parameters">
           <parameter key="Random Forest (2).number_of_trees" value="[100;500;10;logarithmic]"/>
           <parameter key="Random Forest (2).apply_pruning" value="true,false"/>
@@ -634,18 +635,26 @@
       </operator>
       <connect from_op="Retrieve preprocessed-train-final (2)" from_port="output" to_op="Loop Parameters" to_port="input 1"/>
       <connect from_op="Retrieve preprocessed-test-final (3)" from_port="output" to_op="Loop Parameters" to_port="input 2"/>
-      <connect from_op="Retrieve preprocessed-train-final (5)" from_port="output" to_op="Optimize MLP (2)" to_port="input 1"/>
-      <connect from_op="Retrieve preprocessed-test-final (2)" from_port="output" to_op="Optimize MLP (2)" to_port="input 2"/>
+      <connect from_op="Retrieve preprocessed-train-final (5)" from_port="output" to_op="Optimize MLP" to_port="input 1"/>
+      <connect from_op="Retrieve preprocessed-test-final (2)" from_port="output" to_op="Optimize MLP" to_port="input 2"/>
+      <connect from_op="Loop Parameters" from_port="output 1" to_port="result 1"/>
       <connect from_op="Retrieve preprocessed-train-final (6)" from_port="output" to_op="Optimize SVM" to_port="input 1"/>
       <connect from_op="Retrieve preprocessed-test-final (4)" from_port="output" to_op="Optimize SVM" to_port="input 2"/>
-      <connect from_op="Optimize SVM" from_port="performance" to_port="result 1"/>
-      <connect from_op="Retrieve preprocessed-train-final" from_port="output" to_op="Optimize decision tree (2)" to_port="input 1"/>
-      <connect from_op="Retrieve preprocessed-test-final" from_port="output" to_op="Optimize decision tree (2)" to_port="input 2"/>
-      <connect from_op="Retrieve preprocessed-train-final (7)" from_port="output" to_op="Optimize random forest (2)" to_port="input 1"/>
-      <connect from_op="Retrieve preprocessed-test-final (7)" from_port="output" to_op="Optimize random forest (2)" to_port="input 2"/>
+      <connect from_op="Optimize SVM" from_port="performance" to_port="result 2"/>
+      <connect from_op="Optimize MLP" from_port="performance" to_port="result 5"/>
+      <connect from_op="Retrieve preprocessed-train-final" from_port="output" to_op="Optimize decision tree" to_port="input 1"/>
+      <connect from_op="Retrieve preprocessed-test-final" from_port="output" to_op="Optimize decision tree" to_port="input 2"/>
+      <connect from_op="Optimize decision tree" from_port="performance" to_port="result 3"/>
+      <connect from_op="Retrieve preprocessed-train-final (7)" from_port="output" to_op="Optimize random forest" to_port="input 1"/>
+      <connect from_op="Retrieve preprocessed-test-final (7)" from_port="output" to_op="Optimize random forest" to_port="input 2"/>
+      <connect from_op="Optimize random forest" from_port="performance" to_port="result 4"/>
       <portSpacing port="source_input 1" spacing="0"/>
       <portSpacing port="sink_result 1" spacing="0"/>
       <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+      <portSpacing port="sink_result 5" spacing="0"/>
+      <portSpacing port="sink_result 6" spacing="0"/>
     </process>
   </operator>
 </process>
