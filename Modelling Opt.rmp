@@ -71,9 +71,9 @@
       </operator>
       <operator activated="true" class="support_vector_machine_libsvm" compatibility="10.1.002" expanded="true" height="82" name="SVM" width="90" x="246" y="187">
         <parameter key="svm_type" value="C-SVC"/>
-        <parameter key="kernel_type" value="rbf"/>
+        <parameter key="kernel_type" value="linear"/>
         <parameter key="degree" value="3"/>
-        <parameter key="gamma" value="0.45"/>
+        <parameter key="gamma" value="0.0"/>
         <parameter key="coef0" value="0.0"/>
         <parameter key="C" value="10.0"/>
         <parameter key="nu" value="0.5"/>
