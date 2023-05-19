@@ -16,10 +16,13 @@ This uses a `loop parameters` and `optimize parameters` in order to train to fin
 ## Modelling opt.rmp
 This runs the different models with the values found by `Modelling.rmp`. 
 
-## ensemble.rmp
+## PCA_test.rmp
+We tested PCA but could not get any better results with our preprocessed data. 
+
+## Ensemble.rmp
 Same as `Modelling.rmp` but for the ensemble classifiers
 
-## ensemble opt.rmp
+## Ensemble opt.rmp
 Same as `Modelling opt.rmp` but for the ensemble classifiers
 
 ## Matricies.rmp
